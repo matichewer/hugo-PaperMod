@@ -23,9 +23,8 @@
     {{- $twitterSite = .twitter }}
   {{- end }}
 {{- else }}
-  {{- with site.Social.twitter }}
-    {{- $twitterSite = . }}
-    {{- warnf "The social key in site configuration is deprecated. Use params.social.twitter instead." }}
+  {{- with site.Params.social.twitter }}
+   {{- $twitterSite = . }}
   {{- end }}
 {{- end }}
 
