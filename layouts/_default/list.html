@@ -1,5 +1,11 @@
 {{- define "main" }}
 
+{{- if eq .Permalink "http://localhost:1313/hide/" }}
+<header class="page-header">
+  <h2>Acceso Denegado</h2>
+  <p>No tienes permiso para acceder a esta sección :)</p>
+</header>
+{{- else }}
 {{- if (and site.Params.profileMode.enabled .IsHome) }}
 {{- partial "index_profile.html" . }}
 {{- else }} {{/* if not profileMode */}}
@@ -114,6 +120,7 @@
     {{- end }}
   </nav>
 </footer>
+{{- end }}
 {{- end }}
 
 {{- end }}{{/* end profileMode */}}
